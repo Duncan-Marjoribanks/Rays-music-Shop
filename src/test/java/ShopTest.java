@@ -1,3 +1,4 @@
+import items.Item;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -6,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class ShopTest {
 
     Shop shop;
-    Item tiem;
+    Item item;
 
     @Before
     public void before(){
@@ -16,7 +17,7 @@ public class ShopTest {
 
     @Test
     public void canCountStock(){
-        assertEquals(0, shop.stockCount());
+        assertEquals(0, shop.countStock());
     }
 
     @Test
@@ -29,7 +30,7 @@ public class ShopTest {
     public void canRemoveItemFromStock(){
         shop.addToStock(item);
         shop.removeFromStock(item);
-        assertEquals(0, shop.stockCount());
+        assertEquals(0, shop.countStock());
     }
 
 

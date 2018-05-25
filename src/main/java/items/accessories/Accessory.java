@@ -1,4 +1,7 @@
 package items.accessories;
 
-public class Accessory {
+import items.Item;
+
+public class Accessory extends Item{
+
 }
