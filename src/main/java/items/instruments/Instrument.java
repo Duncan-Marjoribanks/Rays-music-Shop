@@ -1,9 +1,10 @@
 package items.instruments;
 
+import behaviours.Iplay;
 import enums.InstrumentType;
 import items.Item;
 
-public abstract class Instrument extends Item {
+public abstract class Instrument extends Item implements Iplay{
 
 
     private String model;
@@ -33,6 +34,10 @@ public abstract class Instrument extends Item {
 
     public InstrumentType getType() {
         return type;
+    }
+
+    public void play(){
+        this.makeSound();
     }
 
 }
