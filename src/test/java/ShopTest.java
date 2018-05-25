@@ -1,4 +1,6 @@
+import enums.InstrumentType;
 import items.Item;
+import items.instruments.Guitar;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,12 +9,12 @@ import static org.junit.Assert.assertEquals;
 public class ShopTest {
 
     Shop shop;
-    Item item;
+    Item guitar;
 
     @Before
     public void before(){
         shop = new Shop();
-        item = new Item();
+        guitar = new Guitar("Fender", 75.00, 150.00, "Stratocaster", "Thrummm", "Blue", InstrumentType.STRING);
     }
 
     @Test
@@ -22,14 +24,14 @@ public class ShopTest {
 
     @Test
     public void canAddItemsToStock(){
-        shop.addToStock(item);
+        shop.addToStock(guitar);
         assertEquals(1, shop.countStock());
     }
 
     @Test
     public void canRemoveItemFromStock(){
-        shop.addToStock(item);
-        shop.removeFromStock(item);
+        shop.addToStock(guitar);
+        shop.removeFromStock(guitar);
         assertEquals(0, shop.countStock());
     }
 
